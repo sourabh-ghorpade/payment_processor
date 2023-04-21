@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  post "/cards/:card_id/transactions", to: "transactions#create"
 end
