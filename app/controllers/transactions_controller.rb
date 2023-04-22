@@ -1,8 +1,8 @@
 class TransactionsController < ApplicationController
   def create
     transaction = Transaction.new(permitted_params)
-    if transaction.valid?
-      head :created
+    if transaction.save
+      render status: :created, json: {id: 1}
     else
       head :unprocessable_entity
     end

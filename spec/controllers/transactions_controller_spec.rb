@@ -5,9 +5,12 @@ describe TransactionsController do
         it "creates a transaction" do
             merchant = FactoryBot.create(:merchant)
             card = FactoryBot.create(:card)
+            
+            expect {
             post :create, params: {merchant_id: merchant.id, card_id: card.id, amount: 1, currency: "USD"}
-    
             assert_response :created
+            }.to change{Transaction.count}.by(1)
+            expect(JSON.parse(response.body)).to eq({"id"=>1})
         end
     end
     context 'some parameters are invalid' do
