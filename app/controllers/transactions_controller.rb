@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
+# This class does the transaction creation.
 class TransactionsController < ApplicationController
   def create
     transaction = Transaction.new(permitted_params)
     if transaction.save
-      render status: :created, json: {id: 1}
+      render status: :created, json: { id: 1 }
     else
       head :unprocessable_entity
     end
