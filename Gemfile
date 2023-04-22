@@ -46,6 +46,9 @@ group :development, :test do
   
   gem "factory_bot_rails", "~> 6.2"
   gem 'faker'
+  gem 'bundler-audit'
+  gem 'brakeman'
+  gem 'rubocop'
 end
 
 group :development do
