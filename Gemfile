@@ -15,6 +15,8 @@ end
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
+gem 'sqlite3'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
@@ -51,6 +53,8 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker'
   gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
 end
 
 group :development do

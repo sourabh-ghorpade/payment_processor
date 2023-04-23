@@ -1,0 +1,16 @@
+# .rubocop.yml
+require:
+  - rubocop-rails
+  - rubocop-rspec
+AllCops:
+  # Exclude generated files
+  Exclude:
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+  # Exclude Metrics/BlockLength rule
+  Metrics/BlockLength:
+    Enabled: false
+  # Exclude Style/MissingTopLevelDocumentation rule
+  Style/MissingTopLevelDocumentation:
+    Enabled: false
+

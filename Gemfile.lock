@@ -195,7 +195,18 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.28.0)
       parser (>= 3.2.1.0)
+    rubocop-capybara (2.18.0)
+      rubocop (~> 1.41)
+    rubocop-rails (2.19.1)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 1.33.0, < 2.0)
+    rubocop-rspec (2.20.0)
+      rubocop (~> 1.33)
+      rubocop-capybara (~> 2.17)
     ruby-progressbar (1.13.0)
+    sqlite3 (1.6.2-arm64-darwin)
+    sqlite3 (1.6.2-x86_64-linux)
     thor (1.2.1)
     timeout (0.3.2)
     tzinfo (2.0.6)
@@ -222,6 +233,9 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.3)
   rspec-rails (~> 6.0.0)
   rubocop
+  rubocop-rails
+  rubocop-rspec
+  sqlite3
   tzinfo-data
 
 RUBY VERSION
