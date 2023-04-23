@@ -3,7 +3,7 @@ class TriggerUserBillsJob < ApplicationJob
 
   def perform(*args)
     User.find_each do |user|
-      GenerateUserBillsJob.perform_later(user.id)
+      GenerateUserBillsJob.perform_later(user)
     end
   end
 end

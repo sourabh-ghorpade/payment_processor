@@ -5,8 +5,8 @@ RSpec.describe TriggerUserBillsJob, type: :job do
     it 'triggers the user bills job for each user' do
       user_one = FactoryBot.create(:user)
       user_two = FactoryBot.create(:user)
-      expect(GenerateUserBillsJob).to receive(:perform_later).with(user_one.id)
-      expect(GenerateUserBillsJob).to receive(:perform_later).with(user_two.id)
+      expect(GenerateUserBillsJob).to receive(:perform_later).with(user_one)
+      expect(GenerateUserBillsJob).to receive(:perform_later).with(user_two)
 
       described_class.perform_now
     end
