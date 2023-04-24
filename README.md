@@ -1,24 +1,33 @@
 # README
+This application processes transactions and generates bills for all of them on a monthly basis. The user, card and merchant data is assumed to be populated externally.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Backlog
+* Generate Bills for last month's transactions only.
+* Add fees which will be configurable.
+* Deploy to a prod environment.
+* Generate a PDF for the Bill and email it.
 
-Things you may want to cover:
-
+# Requirements
 * Ruby version
+'3.0.0'
 
 * System dependencies
-
+Ruby, Rails.
 * Configuration
 
 * Database creation
+We use postgres so login to postgres and create a db for payments_processor_db.
 
 * Database initialization
+rails db:migrate
 
 * How to run the test suite
+rspec
 
 * Services (job queues, cache servers, search engines, etc.)
+Nothing yet.
 
 * Deployment instructions
+TBD.
 
-* ...
+
