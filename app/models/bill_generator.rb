@@ -1,8 +1,5 @@
 class BillGenerator
     def self.generate(user)
-      billable_card = user.cards.first
-      if billable_card
-        Bill.generate(billable_card)
-      end
+        user.cards.each {|card| Bill.generate(card) }
     end
 end
