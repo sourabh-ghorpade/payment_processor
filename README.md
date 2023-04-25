@@ -2,7 +2,7 @@
 This application processes transactions and generates bills for all of them on a monthly basis. The user, card and merchant data is assumed to be populated externally.
 
 #Backlog
-* Generate Bills for last month's transactions only.
+* Generate Bills for last month's transactions only. [Done]
 * Add fees which will be configurable.
 * Deploy to a prod environment.
 * Generate a PDF for the Bill and email it.
