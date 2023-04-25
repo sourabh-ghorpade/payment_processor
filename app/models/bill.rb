@@ -7,9 +7,11 @@ class Bill < ApplicationRecord
 
   def self.generate(billable_card)
     return if billable_card.transactions.empty?
-    Bill.create!(total_transaction_amount: billable_card.transactions.sum(:amount),
-            total_transaction_amount_currency: billable_card.transactions.first.amount_currency,
-            card_transactions: billable_card.transactions,
+    # TODO: Handle february dates where one month might result in a previous month
+    previous_month_transactions = billable_card.previous_month_transactions
+    Bill.create!(total_transaction_amount: previous_month_transactions.sum(:amount),
+            total_transaction_amount_currency: previous_month_transactions.first.amount_currency,
+            card_transactions: previous_month_transactions,
             card: billable_card)
   end
 end

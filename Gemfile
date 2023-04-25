@@ -55,6 +55,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
+  gem 'pry', '~> 0.13.1'
 end
 
 group :development do
@@ -64,4 +65,3 @@ end
 
 # Use sidekiq for background jobs
 gem 'sidekiq'
-
