@@ -12,6 +12,8 @@ class Bill < ApplicationRecord
     Bill.create!(total_transaction_amount: previous_month_transactions.sum(:amount),
             total_transaction_amount_currency: previous_month_transactions.first.amount_currency,
             card_transactions: previous_month_transactions,
+            additional_fees_amount: billable_card.total_fees,
+            additional_fees_amount_currency: billable_card.fee_currency,
             card: billable_card)
   end
 end

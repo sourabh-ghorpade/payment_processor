@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_24_121245) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_25_111653) do
   create_table "bills", force: :cascade do |t|
     t.integer "card_id", null: false
     t.decimal "total_transaction_amount"
@@ -45,6 +45,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_121245) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "fees", force: :cascade do |t|
+    t.string "description"
+    t.decimal "amount"
+    t.string "amount_currency"
+    t.integer "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_fees_on_card_id"
+  end
+
   create_table "merchants", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -73,6 +83,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_121245) do
 
   add_foreign_key "bills", "cards"
   add_foreign_key "cards", "users"
+  add_foreign_key "fees", "cards"
   add_foreign_key "transactions", "cards"
   add_foreign_key "transactions", "merchants"
 end
