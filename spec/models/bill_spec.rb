@@ -35,4 +35,9 @@ RSpec.describe Bill, type: :model do
       end
     end
   end
+
+  context 'associations' do
+    it { should belong_to(:card) }
+    it { should have_and_belong_to_many(:card_transactions) }
+  end
 end

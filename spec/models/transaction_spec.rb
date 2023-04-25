@@ -18,4 +18,9 @@ RSpec.describe Transaction, type: :model do
             end
         end
     end
+
+    context 'associations' do
+        it { should belong_to(:card) }
+        it { should belong_to(:merchant) }
+    end
 end
